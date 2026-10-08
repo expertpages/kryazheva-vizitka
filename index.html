@@ -3,84 +3,215 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Кряжева Наталия Николаевна — визитная карточка врача</title>
-<meta name="description" content="Визитная карточка врача Кряжевой Наталии Николаевны. Телефон: +7 950 841 42 43.">
-<meta property="og:title" content="Кряжева Наталия Николаевна — визитка врача">
-<meta property="og:description" content="Телефон: +7 950 841 42 43. Нажмите, чтобы позвонить или сохранить контакт.">
+<title>Кряжева Наталия Николаевна — врач</title>
+<meta name="description" content="Личная страница врача Кряжевой Наталии Николаевны. Телефон: +7 950 841 42 43.">
+<meta property="og:title" content="Кряжева Наталия Николаевна — врач">
+<meta property="og:description" content="Запись и консультации: +7 950 841 42 43">
 <style>
   :root{
-    --teal:#0e7490; --teal-dark:#0f4c5c; --ink:#123; --muted:#5b6b74;
-    --bg1:#e6f3f6; --bg2:#f7fbfc; --card:#ffffff;
+    --deep:#0B3542; --teal:#0E7490; --teal2:#13788C; --mint:#A9E8DB;
+    --ink:#12343F; --muted:#5f7d88; --bg-soft:#F2F9FA; --card:#ffffff;
   }
-  *{box-sizing:border-box; margin:0; padding:0}
-  body{
-    font-family: -apple-system, "Segoe UI", Roboto, "PT Sans", Arial, sans-serif;
-    background: linear-gradient(160deg, var(--bg1), var(--bg2));
-    min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px;
-  }
-  .card{
-    background:var(--card); max-width:430px; width:100%; border-radius:20px;
-    box-shadow:0 18px 50px rgba(15,76,92,.18); overflow:hidden;
-  }
-  .hero{background:linear-gradient(135deg, var(--teal-dark), var(--teal)); padding:34px 28px 26px; color:#fff; text-align:center}
-  .badge{width:84px;height:84px;margin:0 auto 16px;border-radius:50%;background:rgba(255,255,255,.14);
-    display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.35)}
-  .badge svg{width:44px;height:44px}
-  h1{font-size:24px;line-height:1.25;letter-spacing:.2px}
-  .role{margin-top:6px;font-size:15px;opacity:.92}
-  .body{padding:26px 28px 30px}
-  .phone{font-size:26px;font-weight:700;color:var(--teal-dark);text-align:center;text-decoration:none;
-    display:block;white-space:nowrap}
-  .phone:hover{text-decoration:underline}
-  .hint{text-align:center;color:var(--muted);font-size:13px;margin-top:6px}
-  .btns{display:grid;gap:12px;margin-top:22px}
-  .btn{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 18px;border-radius:12px;
-    font-size:16px;font-weight:600;text-decoration:none;border:none;cursor:pointer;width:100%;transition:filter .15s}
-  .btn:hover{filter:brightness(1.06)}
-  .btn-call{background:var(--teal-dark);color:#fff}
-  .btn-save{background:#e7f1f4;color:var(--teal-dark)}
-  .qr{margin-top:28px;text-align:center}
-  .qr img{width:210px;max-width:70%;height:auto;border-radius:10px}
-  .qr figcaption{margin-top:10px;color:var(--muted);font-size:13.5px;line-height:1.45}
-  .foot{padding:0 28px 26px;text-align:center;color:var(--muted);font-size:12px}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,"Segoe UI",Roboto,"PT Sans",Arial,sans-serif;color:var(--ink);
+       background:var(--bg-soft);line-height:1.6}
+  .wrap{max-width:960px;margin:0 auto;padding:0 22px}
+
+  /* top bar */
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(11,53,66,.92);backdrop-filter:blur(8px)}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+  .topbar .brand{color:#fff;font-weight:600;letter-spacing:.4px;font-size:15px;text-decoration:none}
+  .topbar .tel{color:var(--mint);font-weight:700;text-decoration:none;font-size:15px;white-space:nowrap}
+  .topbar .tel:hover{text-decoration:underline}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden;color:#fff;
+    background:linear-gradient(165deg,var(--deep) 0%,var(--teal2) 100%)}
+  .hero::before{content:"";position:absolute;width:640px;height:640px;border-radius:50%;
+    background:rgba(255,255,255,.06);top:-320px;left:50%;transform:translateX(-50%)}
+  .hero::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;
+    background:rgba(255,255,255,.05);bottom:-220px;right:-140px}
+  .hero .wrap{position:relative;z-index:2;min-height:88vh;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;text-align:center;padding:70px 22px 60px}
+  .badge{width:96px;height:96px;border-radius:50%;background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;margin-bottom:26px}
+  .badge span{color:#fff;font-size:44px;font-weight:300;line-height:1}
+  h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(44px,8vw,76px);
+    letter-spacing:2px;font-weight:700}
+  .hero .name-sub{font-size:clamp(19px,3vw,26px);opacity:.92;margin-top:6px}
+  .chip{display:inline-flex;align-items:center;gap:10px;margin-top:22px;color:var(--mint);
+    font-size:15px;letter-spacing:6px;font-weight:600}
+  .chip::before,.chip::after{content:"";width:56px;height:1px;background:rgba(169,232,219,.6)}
+  .cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:44px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:12px;
+    font-size:16px;font-weight:700;text-decoration:none;cursor:pointer;border:none;transition:.18s}
+  .btn-light{background:#fff;color:var(--deep)}
+  .btn-light:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(0,0,0,.25)}
+  .btn-ghost{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.4)}
+  .btn-ghost:hover{background:rgba(255,255,255,.18)}
+  .hero .phone{display:block;margin-top:34px;font-size:22px;font-weight:700;color:#fff;text-decoration:none;white-space:nowrap}
+  .hero .phone:hover{text-decoration:underline}
+  .hero .hint{margin-top:6px;font-size:13px;opacity:.75}
+  .scroll{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.7);
+    font-size:26px;text-decoration:none;animation:bob 2.2s infinite}
+  @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+  /* sections */
+  section{padding:74px 0}
+  section.alt{background:var(--card)}
+  h2{font-size:clamp(26px,4vw,36px);color:var(--deep);text-align:center;margin-bottom:10px;
+    font-family:Georgia,serif}
+  .sect-sub{text-align:center;color:var(--muted);max-width:640px;margin:0 auto 46px}
+  .rule{width:64px;height:3px;background:var(--mint);border:none;border-radius:2px;margin:14px auto 0}
+
+  .about{display:grid;grid-template-columns:140px 1fr;gap:34px;align-items:start;
+    max-width:760px;margin:0 auto}
+  .about .avatar{width:140px;height:140px;border-radius:50%;background:linear-gradient(150deg,var(--teal),var(--deep));
+    color:var(--mint);display:flex;align-items:center;justify-content:center;font-size:52px}
+  .about p{color:#41606b}
+  .about p + p{margin-top:12px}
+  .placeholder{color:#8fa9b2;font-style:italic}
+  @media(max-width:640px){.about{grid-template-columns:1fr;justify-items:center;text-align:center}}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:var(--card);border-radius:18px;padding:30px 26px;text-align:center;
+    box-shadow:0 8px 26px rgba(11,53,66,.08);border-top:3px solid var(--mint)}
+  section.alt .card{box-shadow:0 8px 26px rgba(11,53,66,.06);background:var(--bg-soft)}
+  .card .ico{font-size:40px}
+  .card h3{color:var(--deep);font-size:19px;margin:14px 0 8px}
+  .card p{color:var(--muted);font-size:15px}
+  @media(max-width:760px){.cards{grid-template-columns:1fr;max-width:420px;margin:0 auto}}
+
+  /* contacts / business card */
+  .bizcard{max-width:460px;margin:0 auto;background:linear-gradient(160deg,var(--deep),var(--teal2));
+    border-radius:22px;padding:38px 30px;text-align:center;color:#fff;
+    box-shadow:0 24px 60px rgba(11,53,66,.28)}
+  .bizcard .bc-name{font-family:Georgia,serif;font-size:30px;letter-spacing:1px}
+  .bizcard .bc-sub{opacity:.9;margin-top:4px;font-size:17px}
+  .bizcard .bc-role{color:var(--mint);letter-spacing:5px;font-size:13px;margin-top:10px;font-weight:600}
+  .bc-panel{background:#fff;border-radius:16px;padding:22px;margin-top:26px}
+  .bc-panel img{width:200px;height:auto;display:block;margin:0 auto}
+  .bc-panel .cap{color:var(--muted);font-size:13px;margin-top:12px;line-height:1.5}
+  .bizcard .bc-phone{display:block;margin-top:24px;font-size:26px;font-weight:700;color:#fff;text-decoration:none;white-space:nowrap}
+  .bizcard .bc-phone:hover{text-decoration:underline}
+  .bizcard .cta{margin-top:18px}
+
+  footer{background:var(--deep);color:rgba(255,255,255,.75);text-align:center;
+    padding:26px 22px;font-size:13px}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.on{opacity:1;transform:none}
 </style>
 </head>
 <body>
-  <main class="card">
-    <header class="hero">
-      <div class="badge">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round">
-          <path d="M9 3h6M12 3v18M4 8h16M4 8c0 5 3.6 8 8 8s8-3 8-8" opacity="0"/>
-          <path d="M12 4v16M4 12h16" stroke-width="2.4"/>
-        </svg>
+
+<nav class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top">Кряжева Н. Н.</a>
+    <a class="tel" href="tel:+79508414243">+7 950 841 42 43</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="badge"><span>&#10010;</span></div>
+    <h1>КРЯЖЕВА</h1>
+    <div class="name-sub">Наталия Николаевна</div>
+    <div class="chip">ВРАЧ<!-- TODO: укажите специальность --></div>
+    <div class="cta">
+      <a class="btn btn-light" href="tel:+79508414243">📞 Позвонить</a>
+      <button class="btn btn-ghost" id="saveBtn">💾 Сохранить контакт</button>
+    </div>
+    <a class="phone" href="tel:+79508414243">+7 950 841 42 43</a>
+    <div class="hint">Нажмите на номер, чтобы позвонить</div>
+    <a class="scroll" href="#about" aria-label="Листать вниз">&#8595;</a>
+  </div>
+</header>
+
+<section id="about" class="reveal">
+  <div class="wrap">
+    <h2>О враче</h2>
+    <hr class="rule">
+    <div style="height:34px"></div>
+    <div class="about">
+      <div class="avatar">&#10010;</div>
+      <!-- TODO: замените этот текст на настоящий рассказ о враче -->
+      <div>
+        <p class="placeholder">Здесь можно рассказать об образовании, стаже и главных принципах работы. Например: «Окончила …, стаж … лет, принимаю взрослых и детей, совмещаю классические и современные подходы к лечению».</p>
+        <p class="placeholder">Второй абзац — о подходе к пациентам: как проходит первый приём, что важно знать перед визитом, как ведётся наблюдение.</p>
       </div>
-      <h1>Кряжева Наталия Николаевна</h1>
-      <div class="role">Врач<!-- TODO: укажите специальность, например «Врач-терапевт», или удалите слово «Врач» --></div>
-    </header>
-    <section class="body">
-      <a class="phone" href="tel:+79508414243">+7 950 841 42 43</a>
-      <div class="hint">Нажмите на номер, чтобы позвонить</div>
-      <div class="btns">
-        <a class="btn btn-call" href="tel:+79508414243">📞&nbsp; Позвонить</a>
-        <button class="btn btn-save" id="saveBtn">💾&nbsp; Сохранить контакт</button>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="alt reveal">
+  <div class="wrap">
+    <h2>Направления работы</h2>
+    <hr class="rule">
+    <p class="sect-sub">Чем врач может помочь пациентам</p>
+    <!-- TODO: впишите настоящие услуги и их описание -->
+    <div class="cards">
+      <div class="card">
+        <div class="ico">&#129658;</div>
+        <h3>Диагностика</h3>
+        <p class="placeholder">Опишите здесь, какие обследования и анализы назначает врач.</p>
       </div>
-      <figure class="qr">
+      <div class="card">
+        <div class="ico">&#129309;</div>
+        <h3>Консультации</h3>
+        <p class="placeholder">Первичный и повторный приём, разбор анализов, второе мнение.</p>
+      </div>
+      <div class="card">
+        <div class="ico">&#128203;</div>
+        <h3>Наблюдение</h3>
+        <p class="placeholder">Динамическое наблюдение и коррекция лечения по результатам.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacts" class="reveal">
+  <div class="wrap">
+    <h2>Контакты</h2>
+    <hr class="rule">
+    <p class="sect-sub">Сохраните визитку — она всегда под рукой</p>
+    <div class="bizcard">
+      <div class="bc-name">Кряжева Наталия Николаевна</div>
+      <div class="bc-sub">Врач</div><!-- TODO: специальность -->
+      <div class="bc-role">ВИЗИТНАЯ КАРТОЧКА</div>
+      <div class="bc-panel">
         <img src="data:image/png;base64,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" alt="QR-код: сохранить контакт Кряжева Наталия Николаевна">
-        <figcaption>Отсканируйте QR-код камерой телефона —<br>контакт сохранится в адресной книге</figcaption>
-      </figure>
-    </section>
-    <footer class="foot">Визитная карточка · Кряжева Наталия Николаевна</footer>
-  </main>
+        <div class="cap">Отсканируйте QR-код камерой телефона —<br>контакт сохранится в адресной книге</div>
+      </div>
+      <a class="bc-phone" href="tel:+79508414243">+7 950 841 42 43</a>
+      <div class="cta">
+        <a class="btn btn-light" href="tel:+79508414243">📞 Позвонить</a>
+        <button class="btn btn-ghost" id="saveBtn2">💾 Сохранить контакт</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Кряжева Наталия Николаевна · Личная страница врача</footer>
+
 <script>
   var VCF = "BEGIN:VCARD\r\nVERSION:3.0\r\nN:Кряжева;Наталия;Николаевна;;\r\nFN:Кряжева Наталия Николаевна\r\nTEL;TYPE=CELL,VOICE:+79508414243\r\nEND:VCARD\r\n";
-  document.getElementById('saveBtn').addEventListener('click', function(){
+  function saveContact(){
     var blob = new Blob([VCF], {type:'text/vcard;charset=utf-8'});
     var a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
     a.download = 'Кряжева Наталия Николаевна.vcf';
     document.body.appendChild(a); a.click();
     setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); }, 800);
-  });
+  }
+  document.getElementById('saveBtn').addEventListener('click', saveContact);
+  document.getElementById('saveBtn2').addEventListener('click', saveContact);
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); } });
+  }, {threshold: .12});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 </script>
 </body>
 </html>
